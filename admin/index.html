@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="ab">
+  <head>
+    <title>AngularBlog</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="fragment" content="!" />
+  </head>
+  <body>
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     <a class="brand" href="#!/">AngularBlog</a>
+      <ul class="nav">
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/settings">Settings</a></li>
+        <li><a href="#!/categories">Categories</a></li>
+        <li><a href="#!/post/0/new">New Post</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div ng-view></div>
+</div>
+  </body>
+</html>

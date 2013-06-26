@@ -1,0 +1,6 @@
+<div class="container">
+<h1><a href="#!/{{ post.slug }}">{{ post.title }}</a></h1>
+<div ng-bind-html="post.content"></div>
+{{ post.published | date:'medium' }}<br/>
+Category: <a href="#!/{{ post.category }}">{{ post.category }}</a>
+</div>

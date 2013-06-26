@@ -1,0 +1,11 @@
+<div class="row" ng-show="posts.length == 0">
+nothing here
+</div>
+<div class="row" ng-show="posts.length > 0" ng-repeat="post in posts">
+<h1><a href="#!/{{ post.slug }}/{{ post.id }}">{{ post.title }}</a></h1>
+<div ng-bind-html="post.content"></div>
+<br/>
+Author: {{ post.author }}<br/>
+Date: {{ post.published | date:'medium' }}<br/>
+Category: {{ post.category }}<br/>
+</div>

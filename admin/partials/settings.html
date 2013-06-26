@@ -1,0 +1,16 @@
+<h2>Settings</h2>
+
+<form name="form" class="css-form" novalidate>
+<div class="row">
+<div class="span2">Blog Title:</div>
+<div class="span7">
+<input type="text" ng-model="settings.title" name="title" class="span6" required />
+  <div ng-show="settings.title.$dirty && settings.title.$invalid">Invalid:
+    <span ng-show="settings.title.$error.required">Please enter a title.</span>
+  </div>
+</div>
+</div>
+
+<button ng-click="update(title)" class="btn btn-primary"
+    ng-disabled="form.$invalid || isUnchanged(title)">Save</button>
+</form>

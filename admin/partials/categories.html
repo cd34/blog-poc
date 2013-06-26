@@ -1,0 +1,33 @@
+<br/>
+<table class="table table-striped table-bordered">
+<tr><th>Category</th><th>Action</th></tr>
+<tr ng-repeat="cat in categories">
+<td><a href="#!/{{ cat.slug }}">{{ cat.title }}</a></td>
+<td><a class="label label-success">Edit</a>
+<a class="label label-important">Delete</a></td>
+</tr>
+</table>
+
+<h2>Add Category</h2>
+
+<form name="form" class="css-form" novalidate>
+<div class="row">
+<div class="span2">Category Title:</div>
+<div class="span7">
+<input type="text" ng-model="category.title" ng-change="update_slug()" name="title" class="span6" required />
+  <div ng-show="category.title.$dirty && category.title.$invalid">Invalid:
+    <span ng-show="category.title.$error.required">Please enter a title.</span>
+  </div>
+</div>
+</div>
+
+<div class="row">
+<div class="span2">Slug:</div>
+<div class="span7">
+<input type="text" ng-model="category.slug" disabled="disabled" name="slug" class="span6" />
+</div>
+</div>
+
+<button ng-click="update(category)" class="btn btn-primary"
+    ng-disabled="form.$invalid || isUnchanged(category)">Save</button>
+</form>

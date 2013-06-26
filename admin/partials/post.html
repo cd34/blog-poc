@@ -1,0 +1,40 @@
+<h2>Add Post</h2>
+
+<form name="form" class="css-form" novalidate>
+<div class="row">
+<div class="span2">Title:</div>
+<div class="span7">
+<input type="text" ng-model="post.title" ng-change="update_slug()" name="title" class="span6" required />
+  <div ng-show="post.title.$dirty && post.title.$invalid">Invalid:
+    <span ng-show="post.title.$error.required">Please enter a title.</span>
+  </div>
+</div>
+</div>
+
+<div class="row">
+<div class="span2">Slug:</div>
+<div class="span7">
+<input type="text" ng-model="post.slug" disabled="disabled" name="slug" class="span6" />
+</div>
+</div>
+
+<div class="row">
+<div class="span2">Post:</div>
+<div class="span7">
+<textarea ng-model="post.content" name="content" class="span6" rows="10" required />
+</textarea>
+</div>
+</div>
+
+<div class="row">
+<div class="span2">Category:</div>
+<div class="span7">
+<select ng-model="post.category" name="category" class="span6" required>
+<option value="{{ cat.title }}" ng:repeat="cat in categories">{{ cat.title }}</option>
+</select>
+</div>
+</div>
+
+<button ng-click="update(post)" class="btn btn-primary"
+    ng-disabled="form.$invalid || isUnchanged(post)">Save</button>
+</form>

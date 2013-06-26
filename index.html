@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="ab" ng-controller="MainCtrl">
+  <head>
+    <title>{{ page.title() }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-sanitize.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="fragment" content="!" />
+  </head>
+  <body>
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+     <a class="brand" href="#!/">cycling.cd34.com</a>
+      <ul class="nav">
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/categories">Categories</a></li>
+        <!-- li><a href="#!/tags">Tags</a></li -->
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+<div ng-view></div>
+</div>
+  </body>
+</html>
