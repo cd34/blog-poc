@@ -1,4 +1,4 @@
-var base_url = 'http://k1c2.mia.colo-cation.com:7379/';
+var base_url = 'http://webdis.com:7379/';
 
 var ab = angular.module('ab', ['ngSanitize']).
   config(function($routeProvider, $locationProvider) {
